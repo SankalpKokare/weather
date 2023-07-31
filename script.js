@@ -21,7 +21,7 @@ async function fetchdata(region) {
     //const region = 'Pune'
 
     console.log("fetchData running")
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=17512deb40a143e79fd172702232907&q=${region}&aqi=yes`, { mode: 'cors' })
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=17512deb40a143e79fd172702232907&q=${region}&aqi=yes`, { mode: 'cors' })
     const weatherData = await response.json();
     const humidity = weatherData.current.humidity;
     console.log(weatherData);

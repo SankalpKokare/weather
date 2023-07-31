@@ -20,14 +20,15 @@ submitButton.addEventListener("click", () => {
 async function fetchdata(region) {
     //const region = 'Pune'
 
-    console.log("fetchData running")
+  try{  console.log("fetchData running")
     const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=17512deb40a143e79fd172702232907&q=${region}&aqi=yes`, { mode: 'cors' })
     const weatherData = await response.json();
     const humidity = weatherData.current.humidity;
-    console.log(weatherData);
-    console.log(humidity);
     WriteDataInHtml(weatherData);
-
+}catch(error){
+    alert("Error, try again")
+    console.log(error)
+}
 
 };
 
